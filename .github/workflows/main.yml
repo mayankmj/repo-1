@@ -6,12 +6,10 @@ on:
         description: 'ًWorkflow 2 which will be triggered'
         required: true
         default: 'workflow_02'
-        
       workflow2_github_account:
         description: 'GitHub account for Workflow 2'
         required: true
         default: 'mayankmj'
-        
       workflow2_repo_github:
         description: 'GitHub repository for Workflow 2'
         required: true
@@ -22,9 +20,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Debug curl command
+        run: |
+          echo "curl -X POST https://api.github.com/repos/${{ github.event.inputs.workflow2_github_account }}/${{ github.event.inputs.workflow2_repo_github }}/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -H 'Authorization: token ${{ secrets.ACTIONS_KEY }}' \
+          --data '{\"event_type\": \"Trigger Workflow\", \"client_payload\": { \"repository\": \"https://github.com/${{ github.event.inputs.workflow2_github_account }}/${{ github.event.inputs.workflow2_repo_github }}\" }}'"
 
       - name: Trigger Workflow 2
         run: |
