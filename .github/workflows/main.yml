@@ -1,4 +1,4 @@
-name: Workflow01
+name: Workflow_01
 on:
   push:
     branches:
@@ -10,17 +10,17 @@ jobs:
     timeout-minutes: 600
 
     steps:
-      - name: Checkout to repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Your existing workflow steps
+      # Your existing workflow steps go here
 
   trigger-workflow02:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger Workflow02
+      - name: Trigger Workflow_02
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.PAT_TOKEN }}
