@@ -15,9 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger repo-2 workflow
-        uses: peter-evans/repository-dispatch@v1
+        uses: actions/github-script@v6
         with:
-          token: ${{ secrets.ACTION_KEY }}
-          repository: mayankmj/repo-2
-          event-type: trigger-workflow
-          # client-payload: '{"target_service": "${{ github.event.inputs.target_service }}", "target_version": "${{ github.event.inputs.target_version }}"}'
+          script: |
+            github.rest.repos.createDispatchEvent({
+              owner: 'mayankmj',
+              repo: 'repo-2',
+              event_type: 'trigger-workflow',
+              # client_payload: {
+              #   target_service: '${{ github.event.inputs.target_service }}',
+              #   target_version: '${{ github.event.inputs.target_version }}'
+              # }
+            })
