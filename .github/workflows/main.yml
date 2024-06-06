@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-    - uses: actions/labeler@v4
-      with:
-        repo-token: ${{ secrets.envPAT }}
-        configuration-path: .github/workflows/config.yml
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.envPAT }}
+          configuration-path: .github/workflows/config.yml
