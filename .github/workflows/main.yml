@@ -26,3 +26,4 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
           repository: mayankmj/repo-2
           event-type: trigger-workflow02
+          client-payload: {}
