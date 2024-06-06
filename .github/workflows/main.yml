@@ -11,12 +11,11 @@ on:
         required: true
 
 jobs:
-  call-reusable-workflow:
+  reusable_workflow_job:
     runs-on: ubuntu-latest
+    environment: production
     steps:
-      - name: Trigger repo-2 workflow
-        uses: actions/labeler@v4
-        with:
-          token: ${{ secrets.ACTION_KEY }}
-          repository: mayankmj/repo-2
-          event-type: trigger-workflow
+    - uses: actions/labeler@v4
+      with:
+        repo-token: ${{ secrets.envPAT }}
+        configuration-path: .github/workflows/config.yml
