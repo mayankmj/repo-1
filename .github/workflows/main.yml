@@ -19,8 +19,13 @@ jobs:
         with:
           github-token: ${{ secrets.ACTION_KEY }}
           script: |
-            const response = await octokit.request('POST /repos/:owner/:repo/dispatches', {
+            const { Octokit } = require("@octokit/core");
+            const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+
+            const response = await octokit.request('POST /repos/:mayankmj/:repo-2/dispatches', {
               owner: 'mayankmj',
               repo: 'repo-2',
-              event_type: 'trigger-workflow',
+              event_type: 'trigger-workflow'
             });
+
+            console.log(response.status);
