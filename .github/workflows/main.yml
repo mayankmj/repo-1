@@ -15,12 +15,12 @@ jobs:
 
       # Your existing workflow steps go here
 
-  trigger-workflow02:
+  trigger-workflow_02:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger Workflow_02
+      - name: Trigger workflow_02
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.ACTION_KEY }}  # Use your PAT_TOKEN secret here
