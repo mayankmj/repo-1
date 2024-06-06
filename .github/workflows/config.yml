@@ -1,3 +1,0 @@
-# config.yml
-env:
-  API_KEY: ${{ secrets.ACTION_KEY }}
