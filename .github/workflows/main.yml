@@ -12,7 +12,12 @@ on:
 
 jobs:
   call-reusable-workflow:
-    uses: mayankmj/repo-2/.github/workflows/trigger-target-workflow.yml@main
-    # with:
-    #   target_service: ${{ github.event.inputs.target_service }}
-    #   target_version: ${{ github.event.inputs.target_version }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger repo-2 workflow
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: mayankmj/repo-2
+          event-type: trigger-workflow
+          # client-payload: '{"target_service": "${{ github.event.inputs.target_service }}", "target_version": "${{ github.event.inputs.target_version }}"}'
