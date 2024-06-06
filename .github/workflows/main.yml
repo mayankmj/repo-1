@@ -1,4 +1,3 @@
-
 name: Call Reusable Workflow
 
 on:
@@ -16,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger repo-2 workflow
-        uses: actions/labeler@v4
+        uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.ACTION_KEY }}
           repository: mayankmj/repo-2
