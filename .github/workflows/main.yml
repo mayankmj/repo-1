@@ -1,3 +1,4 @@
+
 name: Call Reusable Workflow
 
 on:
@@ -15,17 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger repo-2 workflow
-        uses: actions/github-script@v6
+        uses: actions/labeler@v4
         with:
-          github-token: ${{ secrets.ACTION_KEY }}
-          script: |
-            const { Octokit } = require("@octokit/core");
-            const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
-
-            const response = await octokit.request('POST /repos/:mayankmj/:repo-2/dispatches', {
-              owner: 'mayankmj',
-              repo: 'repo-2',
-              event_type: 'trigger-workflow'
-            });
-
-            console.log(response.status);
+          token: ${{ secrets.ACTION_KEY }}
+          repository: mayankmj/repo-2
+          event-type: trigger-workflow
