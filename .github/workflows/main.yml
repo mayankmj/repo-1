@@ -15,15 +15,11 @@ jobs:
 
       # Your existing workflow steps go here
 
-  trigger-workflow02:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
+      # Add a step to trigger the workflow in another repository
       - name: Trigger Workflow_02
-        uses: peter-evans/repository-dispatch@v2
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
-          repository: mayankmj/repo-2
-          event-type: trigger-workflow02
-          client-payload: '{}'
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/mayankmj/repo-2/actions/workflows/workflow_02.yml/dispatches \
+            -d '{"ref":"main"}'
