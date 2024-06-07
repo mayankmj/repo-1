@@ -1,32 +1,32 @@
-name: commitfiles
+# name: commitfiles
 
-on: [push]
+# on: [push]
 
-jobs:
-  job1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+# jobs:
+#   job1:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
 
-      - name: Modify value
-        run: echo 'Add value2' >> testfile.txt
+#       - name: Modify value
+#         run: echo 'Add value2' >> testfile.txt
 
-      - name: Move to dir
-        run: |
-          mkdir -p output
-          yes | cp -rf testfile.txt ./output/
+#       - name: Move to dir
+#         run: |
+#           mkdir -p output
+#           yes | cp -rf testfile.txt ./output/
 
-      - name: Commit files
-        run: |
-          git config --local user.email "mayankjohari877@gmail.com"
-          git config --local user.name "mayankmj"
-          git add ./output
-          git commit -m "Add changes"
+#       - name: Commit files
+#         run: |
+#           git config --local user.email "mayankjohari877@gmail.com"
+#           git config --local user.name "mayankmj"
+#           git add ./output
+#           git commit -m "Add changes"
       
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: main # Ignore if your branch is master
-          github_token: ${{ secrets.ACTION_KEY }}
-          force: true
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#           branch: main # Ignore if your branch is master
+#           github_token: ${{ secrets.ACTION_KEY }}
+#           force: true
