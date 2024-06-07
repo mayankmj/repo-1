@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Checkout reusable workflow (optional)
+        uses: actions/checkout@v2  # Optional, only needed if main.yml relies on other files
+
       - name: Trigger repo-2 workflow
         uses: ./.github/workflows/main.yml
         with:
