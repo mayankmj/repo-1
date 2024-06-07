@@ -22,8 +22,5 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install composite run steps action
-        run: npm install -g composite-run-steps@latest
-
       - name: Call Reusable Workflow
         run: composite-run-steps --file mayankmj/repo-2/.github/workflows/main.yml@main --inputs target_service=${{ github.event.inputs.target_service }} target_version=${{ github.event.inputs.target_version }}
