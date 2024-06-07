@@ -1,5 +1,4 @@
 name: Calling Workflow
-
 on: [push]
 jobs:
   useCallable:
