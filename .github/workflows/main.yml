@@ -15,3 +15,4 @@ jobs:
     uses: mayankmj/repo-2/.github/workflows/main.yml@main
     with:
       event-type: trigger-workflow
+      token: ${{ secrets.ACTION_KEY }}
