@@ -1,21 +1,16 @@
 name: Call Reusable Workflow
 
 on:
-  workflow_dispatch:
-    inputs:
-      target_service:
-        description: 'Input a service name (e.g., demo-app)'
-        required: true
-      target_version:
-        description: 'Input a version (e.g., v1.0.0)'
-        required: true
+  push:
+    branches:
+      - main
 
 jobs:
   call-reusable-workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger repo-2 workflow
-        uses: mayankmj/repo-2/.github/workflows/main.yml@main
+        uses: ./mayankmj/repo-2/.github/workflows/main.yml@main
         with:
           token: ${{ secrets.ACTION_KEY }}
           repository: mayankmj/repo-2
