@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger repo-2 workflow
-        uses: peter-evans/repository-dispatch@v1
+        uses: mayankmj/repo-2/.github/workflows/main.yml@main
         with:
           token: ${{ secrets.ACTION_KEY }}
           repository: mayankmj/repo-2
