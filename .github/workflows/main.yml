@@ -1,23 +1,9 @@
-name: Call Reusable Workflow
+name: Calling Workflow
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  call-reusable-workflow:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Checkout reusable workflow (optional)
-        uses: actions/checkout@v2  # Optional, only needed if main.yml relies on other files
-
-      - name: Trigger repo-2 workflow
-        uses: ./.github/workflows/main.yml
-        with:
-          token: ${{ secrets.ACTION_KEY }}
-          repository: mayankmj/repo-2
-          event-type: trigger-workflow
+  useCallable:
+    uses: ./.github/workflows/callable_workflow.yml
+    with:
+      name: 'Jimin'
