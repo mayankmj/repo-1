@@ -4,6 +4,6 @@ on: [push]
 
 jobs:
   useCallable:
-    uses: mayankmj/repo-2/.github/workflows/callable_workflow.yml
+    uses: mayankmj/repo-2/.github/workflows/main.yml@main
     with:
       name: 'Jimin'
