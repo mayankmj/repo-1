@@ -9,9 +9,10 @@ jobs:
   call-reusable-workflow:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger repo-2 workflow
+      - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Call the reusable workflow in repo-2
+
+      - name: Trigger repo-2 workflow
         uses: ./.github/workflows/main.yml
         with:
           token: ${{ secrets.ACTION_KEY }}
