@@ -17,6 +17,6 @@ jobs:
       - name: Trigger repo-2 workflow
         uses: peter-evans/repository-dispatch@v1
         with:
-          # token: ${{ secrets.ACTION_KEY }}
+          token: ${{ secrets.ACTION_KEY }}
           repository: mayankmj/repo-2
           event-type: trigger-workflow
