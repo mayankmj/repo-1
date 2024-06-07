@@ -1,5 +1,7 @@
 name: Calling Workflow
-on: [push]
+on:
+  push: 
+    branches: ["main"]
 jobs:
   useCallable:
     uses: mayankmj/repo-2/.github/workflows/main.yml@main
