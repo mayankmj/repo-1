@@ -12,29 +12,11 @@ on:
 
 jobs:
   call-reusable-workflow:
-    name: Call Reusable Workflow
-
-on:
-  workflow_dispatch:
-    inputs:
-      target_service:
-        description: 'Input a service name (e.g., demo-app)'
-        required: true
-      target_version:
-        description: 'Input a version (e.g., v1.0.0)'
-        required: true
-
-jobs:
-  call-reusable-workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger repo-2 workflow
-        uses: ./.github/workflows/my-action
-         with:
-         token: ${{ secrets.ACTION_KEY }}
-        # uses: mayankmj/repo-1/.github/workflows/workflow_02.yml@main
-        # with:
-        #   token: ${{ secrets.ACTION_KEY }}
-        #   repository: mayankmj/repo-2
-        #   event-type: trigger-workflow
-
+        uses: mayankmj/repo-1/.github/workflows/workflow_02.yml@main
+        with:
+          token: ${{ secrets.ACTION_KEY }}
+          repository: mayankmj/repo-2
+          event-type: trigger-workflow
