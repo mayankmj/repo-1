@@ -1,4 +1,3 @@
-# .github/workflows/main.yml
 name: Call Reusable Workflow
 
 on:
@@ -15,5 +14,4 @@ jobs:
   call-reusable-workflow:
     uses: mayankmj/repo-2/.github/workflows/main.yml@main
     with:
-      target_service: ${{ github.event.inputs.target_service }}
-      target_version: ${{ github.event.inputs.target_version }}
+      event-type: trigger-workflow
