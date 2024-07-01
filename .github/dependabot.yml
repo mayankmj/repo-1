@@ -2,9 +2,9 @@ version: 2
 registries:
   github:
     type: git
-    url: https://github.com/mayankmj/repo-2
+    url: https://github.com
     username: mayankmj
-    password: "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"
+    password: ${{secrets.PAT_DEPENDABOT}}
 updates:
   - package-ecosystem: "github-actions" 
     directory: "/"
