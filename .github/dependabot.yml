@@ -6,11 +6,11 @@ updates:
   schedule: 
     interval: "daily"
     time: "07:52"
-registries:
-  github:
-    type: git
-    url: https://github.com/mayankmj/repo-2
-    username: mayankmj
-    password: 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
+# registries:
+#   github:
+#     type: git
+#     url: https://github.com/mayankmj/repo-2
+#     username: mayankmj
+#     password: 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
     
     
