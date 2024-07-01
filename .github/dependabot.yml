@@ -5,7 +5,7 @@ updates:
   # target-branch: "feature/dependabot"
   schedule: 
     interval: "daily"
-    time: "07:34"
+    time: "07:35"
 registries:
   github:
     type: git
