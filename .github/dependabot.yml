@@ -5,12 +5,12 @@ updates:
   # target-branch: "feature/dependabot"
   schedule: 
     interval: "daily"
-    time: "07:48"
+    time: "07:51"
 registries:
   github:
     type: git
     url: https://github.com/mayankmj/repo-2
     username: mayankmj
-    password: "02122002Mj@"
+    password: "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"
     
     
