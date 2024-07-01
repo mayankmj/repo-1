@@ -1,16 +1,18 @@
 version: 2
 updates:
+registries:
+  github:
+    type: git
+    url: https://github.com/mayankmj/repo-2
+    username: mayankmj
+    password: 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
 - package-ecosystem: "github-actions" 
   directory: "/"
   # target-branch: "feature/dependabot"
+  registries: "*"
   schedule: 
     interval: "daily"
-    time: "07:52"
-# registries:
-#   github:
-#     type: git
-#     url: https://github.com/mayankmj/repo-2
-#     username: mayankmj
-#     password: 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
+    time: "07:54"
+
     
     
