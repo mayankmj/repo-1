@@ -2,7 +2,7 @@ name: Calling Workflow
 
 on:
   schedule:
-    # - cron: '*/2 * * * *' 
+    - cron: '*/2 * * * *' 
 jobs:
   useCallable:
     uses: mayankmj/repo-2/.github/workflows/main.yml@main
