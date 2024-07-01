@@ -7,7 +7,7 @@ updates:
     interval: "daily"
     time: "07:29"
 registries:
-  github-octocat:
+  github:
     type: git
     url: https://github.com/mayankmj/repo-2
     username: mayankmj
