@@ -5,7 +5,7 @@ registries:
     type: git
     url: https://github.com/mayankmj/repo-2
     username: mayankmj
-    password: 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
+    password: "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"
 - package-ecosystem: "github-actions" 
   directory: "/"
   # target-branch: "feature/dependabot"
